@@ -52,7 +52,6 @@ export async function POST(
       await incrementApiLimit();
     }
 
-    console.log('response: ', response);
     return NextResponse.json(response.choices[0].message);
   } catch (error) {
     console.log('[CODE_ERROR]', error);
