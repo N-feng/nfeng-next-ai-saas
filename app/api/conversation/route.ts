@@ -5,7 +5,10 @@ import { OpenAI } from "openai";
 import { checkSubscription } from "@/lib/subscription";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 
-const openai = new OpenAI();
+const openai = new OpenAI({
+  baseURL: "https://api.bemore.lol/v1",
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 export async function POST(
   req: Request
